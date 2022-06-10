@@ -1,3 +1,9 @@
+//===============================================//
+// Program Aplikasi Scooter                     //
+// Oleh: 
+// Dated:
+//==============================================//
+
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>
@@ -7,21 +13,31 @@
 int login();
 bool is_admin();
 
+
 // User List Admin dan User biasa
 char admin[]="admin";
 char admin_pass[]="admin";
 
-char user[]="user";
-char user_pass[]="user";
+char user01[]="user01";
+char user01_pass[]="user01";
 
-char user[01]="user01";
-char user_pass[01]="user01";
+char user02[]="user02";
+char user02_pass[]="user02";
 
 
 // Main procedure
 int main()
 {
-   int login();
+   int role;
+   role = login();
+   //role 1=Admin, Role 0=User biasa
+   if(role ==1) 
+   {
+      printf("call menu admin");
+   } else if (role ==2) 
+   {
+      printf("call menu user");
+   } 
 };
 
 
@@ -31,10 +47,12 @@ int main()
 
 int login() 
 {
+   printf("test\n");
    char username[25];
    char password[25];
    char un,pw;
    int i;
+
    bool loop=true;
 
    system("clear");
@@ -54,11 +72,11 @@ int login()
 
       for (i = 0; i < 25; i++)
       {
-         un = getchar();
-         username[i] = un;
+         //un = getchar();
+         un = username[i]; 
 
-         pw = getchar();
-         password[i] = un;
+         //pw = getchar();
+         un = password[i];
       }
 
       loop = false;
@@ -66,6 +84,6 @@ int login()
  
    // Nilai kembali 1=admin
    // Nilai kembali 0=user
-   return 
+   return 1;
 }
 
